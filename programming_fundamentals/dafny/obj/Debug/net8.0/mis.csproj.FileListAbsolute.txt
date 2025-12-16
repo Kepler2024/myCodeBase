@@ -1,0 +1,15 @@
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.GeneratedMSBuildEditorConfig.editorconfig
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.AssemblyInfoInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.AssemblyInfo.cs
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.csproj.CoreCompileInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.sourcelink.json
+/Users/harry/Desktop/programming_fundamentals/dafny/mis
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/refint/mis.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.pdb
+/Users/harry/Desktop/programming_fundamentals/dafny/mis.deps.json
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/mis.genruntimeconfig.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/mis.runtimeconfig.json
+/Users/harry/Desktop/programming_fundamentals/dafny/mis.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ref/mis.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/mis.pdb

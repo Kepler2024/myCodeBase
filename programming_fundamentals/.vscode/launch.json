@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "跑",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}/${fileBasenameNoExtension}",
+      "args": [],
+      "cwd": "${fileDirname}",
+      "stopAtEntry": false,
+      "MIMode": "lldb",
+      "preLaunchTask": "build active file (gcc)",
+      "externalConsole": true
+    }
+  ]
+}

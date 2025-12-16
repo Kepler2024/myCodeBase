@@ -1,0 +1,14 @@
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/hello.GeneratedMSBuildEditorConfig.editorconfig
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/hello.AssemblyInfoInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/hello.AssemblyInfo.cs
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/hello.csproj.CoreCompileInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/hello
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/hello.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/refint/hello.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/hello.pdb
+/Users/harry/Desktop/programming_fundamentals/dafny/hello.deps.json
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/hello.genruntimeconfig.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/hello.runtimeconfig.json
+/Users/harry/Desktop/programming_fundamentals/dafny/hello.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ref/hello.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/hello.pdb

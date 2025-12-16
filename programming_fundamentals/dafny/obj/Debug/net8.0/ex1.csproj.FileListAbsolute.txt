@@ -1,0 +1,12 @@
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ex1.GeneratedMSBuildEditorConfig.editorconfig
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ex1.AssemblyInfoInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ex1.AssemblyInfo.cs
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ex1.csproj.CoreCompileInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ex1.sourcelink.json
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ex1.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/refint/ex1.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ex1.pdb
+/Users/harry/Desktop/programming_fundamentals/dafny/ex1.deps.json
+/Users/harry/Desktop/programming_fundamentals/dafny/ex1.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ref/ex1.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/ex1.pdb

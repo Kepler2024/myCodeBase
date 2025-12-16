@@ -1,0 +1,12 @@
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/q2.GeneratedMSBuildEditorConfig.editorconfig
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/q2.AssemblyInfoInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/q2.AssemblyInfo.cs
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/q2.csproj.CoreCompileInputs.cache
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/q2.sourcelink.json
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/q2.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/refint/q2.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/q2.pdb
+/Users/harry/Desktop/programming_fundamentals/dafny/q2.deps.json
+/Users/harry/Desktop/programming_fundamentals/dafny/q2.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/obj/Debug/net8.0/ref/q2.dll
+/Users/harry/Desktop/programming_fundamentals/dafny/q2.pdb
