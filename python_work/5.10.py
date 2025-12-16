@@ -1,5 +1,5 @@
 #exercise 5.10
-current_users = ['esThEr','luna','harry','John','Dick']
+current_users = ['sk','luna','harry','John','Dick']
 new_users = ['Bily','Kay','Dulan','HARRY','Dick']
 new_user_copy = []
 current_users_copy = []
