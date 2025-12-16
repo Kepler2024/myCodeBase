@@ -3,7 +3,7 @@ kimi = {
     'first_name' : 'Kimi',
     'last_name' : 'Kepler',
     'middle_name' : 'Cui',
-    'fav_jobs' : 'Rimjob',
+    'fav_jobs' : 'Rider',
     }
 print (kimi)
 print ('\n')

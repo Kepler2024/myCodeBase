@@ -4,4 +4,4 @@ num = int(num)
 if num % 10 == 0:
     print ('pass')
 else:
-    print ('fuck')
+    print ('no')

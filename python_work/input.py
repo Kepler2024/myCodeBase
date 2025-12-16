@@ -4,4 +4,4 @@ message = int(message)
 if message <= 8:
     print ('you can sit.')
 else:
-    print ('go fuck yourself')
+    print ('you need to wait.')
