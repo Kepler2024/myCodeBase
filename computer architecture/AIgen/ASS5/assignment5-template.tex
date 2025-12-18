@@ -1,0 +1,214 @@
+%%%%
+\documentclass[10pt,answers]{exam}
+\usepackage{times}
+\usepackage{enumerate}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage{pgf}
+\usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{blkarray}
+\usepackage{amsfonts}
+\usepackage{listings}
+
+
+\lstset{
+    basicstyle=\ttfamily,
+    frame=single,
+    numbers=none,
+    showstringspaces=false,
+    breaklines=true,
+}
+\DeclareFontShape{OT1}{cmtt}{bx}{n}{<5><6><7><8><9><10><10.95><12><14.4><17.28><20.74><24.88>cmttb10}{}
+
+\usetikzlibrary{arrows,automata,matrix}
+
+%Feel free to add packages and newcommands here if you wish
+   
+%%%%
+% IMPORTANT: YOU SHOULD INSTANTIATE THE FOLLOWING THREE COMMANDS WITH YOUR OWN DETAILS
+\newcommand{\authorname}{XueJin Cui}     %%% Write your first and last name
+\newcommand{\authornumber}{S5876095}  %%% Write your student number
+\newcommand{\assignmentnumber}{5}  %%% Write 1, 2, 3, etc
+%%%%
+
+%%%% DO NOT MODIFY 
+
+\pagestyle{headandfoot}
+\runningheadrule
+\firstpageheader{Computer Architecture (2025-2026)}{{\textbf{Assignment}~\assignmentnumber} \\ \today}{}
+\runningheader{Individual solutions by \authorname~(\authornumber)}
+              {}
+              {Page \thepage\ of \numpages}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+\newcommand{\qpoints}[1]{\hfill \textbf{(#1 points)}}
+ 
+\begin{document}
+ \boxedpoints
+\begin{center}
+  \fbox{\fbox{\parbox{0.97\textwidth}{\centering
+  {\Large
+ \authorname~(\authornumber)  }}}
+ }
+\end{center}
+
+\begin{enumerate}
+\item[] \textbf{INSTRUCTIONS}
+
+\item Submission is only via Themis for the practical exercises and via Brightspace for the theoretical exercises. Deadlines are strict.
+
+\item The exercises in this assignment add up to 100 points. To calculate your grade simply divide the number of points by 10.
+
+\item You must submit a pdf typeset in (La)TeX (no handwritten solutions) using \textbf{this} template.
+
+\item Seeking solutions from the internet, from any external resource, or from any other person is prohibited.
+
+\item Please note that the course lecturer reserves the right to ask the student submitting the assignment to explain the answers to any or all questions. If the student is unable to provide a satisfactory answer then that question may receive partial/no credit. 
+
+\item Of course, university policies on plagiarism always apply. In particular, any suspected plagiarism will be reported to the Board of Examiners.
+\end{enumerate}
+\rule{6cm}{0.4pt}
+
+\bigskip
+\bigskip
+
+
+%%% MODIFICATIONS ALLOWED FROM HERE
+
+\begin{questions}
+
+\question You are given the following LC3 ASM program! For this exercise, you have two tasks:  \qpoints{10}
+\begin{enumerate}
+    \item Write the symbol table (use an absolute address, not offsets)
+    \item Manually assemble (aka convert to the internal LC3 representation) the instructions at A, B and D. Both binary and hex are fine.
+\end{enumerate}
+
+\begin{lstlisting}
+.ORIG x3000
+    AND R0, R0, #0
+A   LD R1, E
+    AND R2, R1, #1
+    BRp C
+B   ADD R1, R1, #-1
+C   ADD R0, R0, R1
+    ADD R1, R1, #-2
+D   BRp C
+    ST R0, F
+    TRAP x25
+E  .BLKW 1
+F  .BLKW 1
+   .END
+\end{lstlisting} 
+
+
+\begin{solution}
+
+
+    \begin{enumerate}
+    \item \textbf{Symbol Table:}
+    \begin{center}
+    \begin{tabular}{|c|c|}
+        \hline
+        \textbf{Symbol} & \textbf{Absolute Address} \\ \hline
+        A & x3001 \\ \hline
+        B & x3004 \\ \hline
+        C & x3005 \\ \hline
+        D & x3007 \\ \hline
+        E & x300A \\ \hline
+        F & x300B \\ \hline
+    \end{tabular}
+    \end{center}
+
+    \item \textbf{Manual Assembly:}
+    \begin{itemize}
+        \item \textbf{Instruction A (LD R1, E):}
+        \begin{itemize}
+            \item Opcode: $0010$, DR: $001$ (R1), PCoffset9: $x300A - x3002 = 8$ ($000001000$)
+            \item Binary: $0010001000001000$
+        \end{itemize}
+        \item \textbf{Instruction B (ADD R1, R1, \#-1):}
+        \begin{itemize}
+            \item Opcode: $0001$, DR: $001$ (R1), SR1: $001$ (R1), Imm5: $-1$ ($11111$)
+            \item Binary: $0001001001111111$
+        \end{itemize}
+        \item \textbf{Instruction D (BRp C):}
+        \begin{itemize}
+            \item Opcode: $0000$, nzp: $001$ (p), PCoffset9: $x3005 - x3008 = -3$ ($111111101$)
+            \item Binary: $0000001111111101$
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+    
+    
+\end{solution}
+
+
+\question For this exercise we will assume that two new operations have been added to LC3: \texttt{PUSH} and \texttt{POP}. The instruction \texttt{PUSH Rx} pushes the value in Register x onto the stack. \texttt{POP Rx} removes a value from the stack and loads it into Rx. You are also given a list of the instructions which were executed, however some of the registers went missing. Fill out what the correct registers would be! \qpoints{10}
+
+\noindent\begin{tabular}{|c|c|}
+\hline
+\textbf{BEFORE} & \textbf{AFTER} \\
+\hline
+\begin{tabular}{r|l}
+R0 & x0000 \\
+R1 & x1111 \\
+R2 & x2222 \\
+R3 & x3333 \\
+R4 & x4444 \\
+R5 & x5555 \\
+R6 & x6666 \\
+R7 & x7777 \\
+\end{tabular} &
+\begin{tabular}{r|l}
+R0 & x1111 \\
+R1 & x1111 \\
+R2 & x3333 \\
+R3 & x3333 \\
+R4 & x4444 \\
+R5 & x5555 \\
+R6 & x6666 \\
+R7 & x4444 \\
+\end{tabular} \\
+\hline
+\end{tabular}
+
+% Operations (lstlisting)
+\noindent\textbf{Operations:}
+\begin{lstlisting}[frame=single]
+PUSH R4
+PUSH (a)
+POP (b)
+PUSH (c)
+POP R2
+POP (d)
+\end{lstlisting}
+
+\begin{solution}
+
+
+    By analyzing the transition from the initial register values to the final states:
+
+\begin{enumerate}
+    \item \textbf{PUSH R4}: The value $x4444$ is pushed onto the stack. [Stack: $x4444$]
+    \item \textbf{PUSH (a)}: The AFTER table shows $R0$ becomes $x1111$. Since $x1111$ was the original value of $R1$, we must push $R1$ to eventually pop it into $R0$. Thus, \textbf{(a) = R1}. [Stack: $x4444, x1111$]
+    \item \textbf{POP (b)}: The top of the stack ($x1111$) is removed. Since $R0$ is the register that changed to $x1111$, the value was popped into $R0$. Thus, \textbf{(b) = R0}. [Stack: $x4444$]
+    \item \textbf{PUSH (c)}: The AFTER table shows $R2$ becomes $x3333$. Since $x3333$ was the original value of $R3$, we must push $R3$. Thus, \textbf{(c) = R3}. [Stack: $x4444, x3333$]
+    \item \textbf{POP R2}: The top of the stack ($x3333$) is popped into $R2$, which matches the AFTER state for $R2$. [Stack: $x4444$]
+    \item \textbf{POP (d)}: The remaining value on the stack ($x4444$) is popped. The AFTER table shows $R7$ changed from $x7777$ to $x4444$, meaning the value was popped into $R7$. Thus, \textbf{(d) = R7}.
+\end{enumerate}
+    
+\end{solution}
+
+
+\end{questions}
+\end{document}
+
+
+
