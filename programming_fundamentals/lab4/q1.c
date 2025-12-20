@@ -17,6 +17,7 @@
 #include <ctype.h>
 
 void *safeMalloc(size_t length) {
+   // safely allocate memory avoiding lack of memory
    void *array = malloc(length);
    if (array == NULL) {
       printf("Error: malloc failed.\n");
@@ -26,19 +27,21 @@ void *safeMalloc(size_t length) {
 }
 
 int isAlphabetic(char *firstLetter) {
-   int input = getchar();
+   int input = getchar(); //we handle the first letter first to avoid do-while
    int index = 0;
    if (isalpha((unsigned char)input)) {
-      firstLetter[index++] = tolower((unsigned char)input);
-   }
-   while (((input = getchar()) != EOF)&&(input!='\n')) {
-      if (input == ' ') {
+      firstLetter[index++] = tolower((unsigned char)input); 
+      //we covert everyletter to lower case so that we can compare them directly
+   } 
+   while (((input = getchar()) != EOF)&&(input!='\n')) { 
+      // read until EOF or newline
+      if (input == ' ') { // space are signatures of new word
          input = getchar();
-         if (isalpha((unsigned char)input)) {
+         if (isalpha((unsigned char)input)) { // check if it's a letter
             firstLetter[index] = tolower((unsigned char)input);
             if (firstLetter[index]<=firstLetter[index-1]) {
                return 0;
-            }
+            } // check whether in alphabetic order, if not return 0
             index++;
          }
       }
