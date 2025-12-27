@@ -3,7 +3,11 @@
 /* date    : 2025/12/18 */
 /* version : 1.0 */
 /* Description:
- * 
+ * 100%
+ * highlight:
+ * very smart use of modular to generate key
+ * very smar use of modular to avoid overflow
+ * very simple but effective encrypt function
  */
 
 #include <stdio.h>
@@ -17,21 +21,33 @@ void *safeMalloc(size_t length) {
       exit(EXIT_FAILURE);
    }
    return array;
-}
+}// safely allocate memory avoiding lack of memory
 
 void inputWord(char word[]) {
    scanf("\n");
    scanf("%s",word);
+}// input function to read the word
+
+void *getKey(char base[], int wordLength,int baseLength) {
+   scanf("\n");
+   scanf("%s",base);
+   char *key = safeMalloc((wordLength+1)*sizeof(char));
+
+   int index = 0;
+   while (index < wordLength) {
+      key[index] = base[index % baseLength]; // use modular to generate key
+      index++;
+   }
+   key[wordLength] = '\0';
+   return key; 
 }
 
-void inputKey(char key[], int keyLength,int length) {
-   scanf("\n");
-   scanf("%s",key);
-
-   char *keyCopy = safeMalloc(length*sizeof(char));
-   strcpy(keyCopy,key);
-   while (strlen(key)<keyLength) {
-      strcat(key,keyCopy);
+void encrypt(char key[],char word[],int wordLength) {
+   int index = 0;
+   while (index < wordLength) {
+      word[index] = 'A'+((word[index]-'A' + (key[index]-'A'))%26);
+      // avoid overflow using modular 26
+      index++;
    }
 }
 
@@ -47,17 +63,20 @@ int main(int argc, char *argv[]) {
 
    int wordLength;
    scanf("%d",&wordLength);
-   int length;
-   scanf("%d",&length);
-   int keyLength = ((wordLength/length)+1)*length+1; 
+   int baseLength;
+   scanf("%d",&baseLength);
 
    char *word = safeMalloc((wordLength+1)*sizeof(char));
-   char *key = safeMalloc((keyLength+1)*sizeof(char));
+   char *base = safeMalloc((baseLength+1)*sizeof(char));
    inputWord(word);
-   inputKey(key,keyLength,length);
+   char *key = getKey(base,wordLength,baseLength);
 
-   print(12,word);
-   print(12,key);
+   print(wordLength,word);
+   encrypt(key,word,wordLength);
+   print(wordLength,word); 
 
+   free(word);
+   free(base);
+   free(key);
    return 0;
 }
